@@ -34,12 +34,15 @@ layout_mode = 2
 layout_mode = 2
 text = "Next Question"
 
+[node name="AnswerLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
 [node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 2
-offset_left = 128.0
-offset_top = 128.0
-offset_right = 928.0
-offset_bottom = 192.0
+offset_left = 137.0
+offset_top = 174.0
+offset_right = 937.0
+offset_bottom = 238.0
 text = "Random"
 
 [connection signal="pressed" from="VBoxContainer/OptionA" to="." method="_on_option_a_pressed"]

@@ -1,12 +1,52 @@
 [
 	{
-		"question": "What is the capital of France?",
-		"options": ["Berlin", "Madrid", "Paris", "Lisbon"],
-		"correct_index": 2
+		"question": "What is phishing?",
+		"options": ["A type of fishing", "A method to steal personal information", "A network protocol", "A type of software"],
+		"correct_index": 1
 	},
 	{
-		"question": "Which planet is known as the Red Planet?",
-		"options": ["Earth", "Mars", "Jupiter", "Saturn"],
+		"question": "Which of the following is a common phishing tactic?",
+		"options": ["Email spoofing", "Firewall installation", "Data encryption", "Multi-factor authentication"],
+		"correct_index": 0
+	},
+	{
+		"question": "What should you do if you receive an unsolicited email asking for personal information?",
+		"options": ["Reply with the information", "Ignore it", "Click on the links", "Forward it to a friend"],
+		"correct_index": 1
+	},
+	{
+		"question": "What is a phishing link?",
+		"options": ["A link to a legitimate website", "A link that leads to a fake website", "A link to download software", "A link to a secure server"],
+		"correct_index": 1
+	},
+	{
+		"question": "Which of the following is a sign of a phishing email?",
+		"options": ["Personalized greeting", "Poor spelling and grammar", "Professional design", "Company logo included"],
+		"correct_index": 1
+	},
+	{
+		"question": "What can you do to protect yourself from phishing?",
+		"options": ["Use a strong password", "Enable two-factor authentication", "Keep software updated", "All of the above"],
+		"correct_index": 3
+	},
+	{
+		"question": "What is spear phishing?",
+		"options": ["Phishing targeted at a specific individual or organization", "A type of fishing technique", "Phishing via social media", "General phishing attacks"],
+		"correct_index": 0
+	},
+	{
+		"question": "Which of the following tools can help detect phishing attempts?",
+		"options": ["Antivirus software", "Email filtering tools", "Web monitoring tools", "All of the above"],
+		"correct_index": 3
+	},
+	{
+		"question": "What should you do if you accidentally click on a phishing link?",
+		"options": ["Change your passwords immediately", "Ignore it", "Uninstall your browser", "Nothing, it's safe"],
+		"correct_index": 0
+	},
+	{
+		"question": "Which type of email address is often used in phishing attempts?",
+		"options": ["Corporate email addresses", "Generic email addresses (e.g., gmail.com, yahoo.com)", "Secure email services", "Verified email domains"],
 		"correct_index": 1
 	}
 ]
