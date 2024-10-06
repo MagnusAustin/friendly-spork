@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://xe0wtqrw2i6u"]
+
+[ext_resource type="Texture2D" uid="uid://clsvnknus88m5" path="res://assets/Office_Concept1.jpeg" id="1_h0g5m"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="OfficeConcept1" type="Sprite2D" parent="."]
+position = Vector2(9.49998, 15)
+scale = Vector2(0.546387, 0.448242)
+texture = ExtResource("1_h0g5m")
+
+[node name="Camera2D" type="Camera2D" parent="."]

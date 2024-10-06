@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch2vwcxq1wi13"]
+
+[ext_resource type="Script" path="res://Scene_change.gd" id="1_qfprh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qfprh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 196.0
+offset_right = 771.0
+offset_bottom = 574.0
+
+[node name="Server" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Server"
+
+[node name="Home" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Home"
+
+[node name="Office" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Office
+"
+
+[connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="VBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/Office" to="." method="_on_office_pressed"]
+[connection signal="pressed" from="VBoxContainer/Office" to="." method="_on_button_pressed"]

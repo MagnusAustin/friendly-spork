@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvuauymwma70y"]
+
+[ext_resource type="Texture2D" uid="uid://3avb7rbeooo8" path="res://assets/Server_Room_Concept1.jpeg" id="1_ybk3w"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ServerRoomConcept1" type="Sprite2D" parent="."]
+position = Vector2(-9.49997, -1.50001)
+scale = Vector2(0.584473, 0.502441)
+texture = ExtResource("1_ybk3w")
+
+[node name="Camera2D" type="Camera2D" parent="."]

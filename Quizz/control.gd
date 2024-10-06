@@ -2,8 +2,9 @@ extends Control
 
 var questions = []
 var options = []
-var current_question_index = 0
 var correct = []
+var current_question_index = 0
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,32 +22,27 @@ func load_questions():
 		questions.append(json_result[i].get("question", "Unknown"))
 
 	for i in range(json_result.size()):
-		options.append(json_result[i].get("options" , "Unknown"))
+		options.append(json_result[i].get("options", "Unknown"))
 		
 	for i in range(json_result.size()):
-		correct.append(json_result[i].get("correct_index" , "Unknown"))
-
+		correct.append(json_result[i].get("correct_index", "Unknown"))
 
 # Display the current question and options
 func show_question():
 	$QuestionLabel.text = questions[current_question_index]
-	$VBoxContainer/OptionA.text = options[current_question_index][0]
-	$VBoxContainer/OptionB.text = options[current_question_index][1]
-	$VBoxContainer/OptionC.text = options[current_question_index][2]
-	$VBoxContainer/OptionD.text = options[current_question_index][3]
+	$OptionA.text = options[current_question_index][0]
+	$OptionB.text = options[current_question_index][1]
+	$OptionC.text = options[current_question_index][2]
+	$OptionD.text = options[current_question_index][3]
 
 func next_question():
 	if current_question_index >= 9:
 		out_of_bounds()
 	else:
-		current_question_index +=1
-		$VBoxContainer/AnswerLabel.text = ''
-		$VBoxContainer/Correct_Answer.text = ''
-		$QuestionLabel.text = questions[current_question_index]
-		$VBoxContainer/OptionA.text = options[current_question_index][0]
-		$VBoxContainer/OptionB.text = options[current_question_index][1]
-		$VBoxContainer/OptionC.text = options[current_question_index][2]
-		$VBoxContainer/OptionD.text = options[current_question_index][3]
+		current_question_index += 1
+		$AnswerLabel.text = ''
+		$Correct_Answer.text = ''
+		show_question()
 
 func _on_next_question_button_pressed():
 	if current_question_index >= 9:
@@ -55,49 +51,56 @@ func _on_next_question_button_pressed():
 		next_question()
 
 func out_of_bounds():
-	$VBoxContainer/AnswerLabel.queue_free()
+	$TextureRect.queue_free()
+	$AnswerLabel.queue_free()
 	$QuestionLabel.text = "You've Completed the Quiz"
-	$VBoxContainer/Correct_Answer.queue_free()
-	$VBoxContainer/OptionA.queue_free()
-	$VBoxContainer/OptionB.queue_free()
-	$VBoxContainer/OptionC.queue_free()
-	$VBoxContainer/OptionD.queue_free()
-	$VBoxContainer/NextQuestionButton.queue_free()	 
-
-
+	$Correct_Answer.queue_free()
+	$OptionA.queue_free()
+	$OptionB.queue_free()
+	$OptionC.queue_free()
+	$OptionD.queue_free()
+	$NextQuestionButton.queue_free()
+	$".".add_child(Label.new())
+	$".".get_child($".".get_child_count() - 1).text = "Your Score: " + str(score) + "/" + str(questions.size())
 
 func _on_option_a_pressed():
 	if correct[current_question_index] == 0: 
-		$VBoxContainer/AnswerLabel.text = "Correct"
-		next_question()
+		$AnswerLabel.text = "Correct"
+		score += 1
+		
 	else:
-		$VBoxContainer/AnswerLabel.text = "Incorrect"
-		correct_ans() 
+		$AnswerLabel.text = "Incorrect"
+		correct_ans()
+	next_question() 
 
 func _on_option_b_pressed():
 	if correct[current_question_index] == 1: 
-		$VBoxContainer/AnswerLabel.text = "Correct"
-		next_question()
+		$AnswerLabel.text = "Correct"
+		score += 1
+		
 	else:
-		$VBoxContainer/AnswerLabel.text = "Incorrect" # Replace with function body.
-		correct_ans() 
+		$AnswerLabel.text = "Incorrect"
+		correct_ans()
+	next_question() 
 
 func _on_option_c_pressed():
 	if correct[current_question_index] == 2: 
-		$VBoxContainer/AnswerLabel.text = "Correct"
-		next_question()
+		$AnswerLabel.text = "Correct"
+		score += 1
 	else:
-		$VBoxContainer/AnswerLabel.text = "Incorrect" # Replace with function body.
+		$AnswerLabel.text = "Incorrect"
 		correct_ans() 
+	next_question()
 
 func _on_option_d_pressed():
 	if correct[current_question_index] == 3: 
-		$VBoxContainer/AnswerLabel.text = "Correct"
-		next_question()
+		$AnswerLabel.text = "Correct"
+		score += 1
 	else:
-		$VBoxContainer/AnswerLabel.text = "Incorrect"
-		correct_ans() 
+		$AnswerLabel.text = "Incorrect"
+		correct_ans()
+	next_question() 
 		
 func correct_ans():
-	$VBoxContainer/Correct_Answer.text = options[current_question_index][correct[current_question_index]]
+	$Correct_Answer.text = options[current_question_index][correct[current_question_index]]
 	print(options[current_question_index][correct[current_question_index]])

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj0wvnpy8s3bn"]
+
+[ext_resource type="Texture2D" uid="uid://djyqnj2e8ynia" path="res://assets/Home_Office_Concept1.jpeg" id="1_chaxu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HomeOfficeConcept1" type="Sprite2D" parent="."]
+position = Vector2(1513.5, -176)
+scale = Vector2(0.608887, 0.535156)
+texture = ExtResource("1_chaxu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1510, -234)

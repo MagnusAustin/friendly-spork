@@ -1,55 +1,87 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbbhsn65au72q"]
+[gd_scene load_steps=3 format=3 uid="uid://cbbhsn65au72q"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_wyk7d"]
+[ext_resource type="Texture2D" uid="uid://bp7ae5rnpg62l" path="res://Cyan Simple Quiz Time Facebook Post.png" id="2_s73n4"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.999
+anchor_bottom = 0.996
+offset_right = 0.16394
+offset_bottom = 0.151978
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wyk7d")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 136.0
-offset_top = 248.0
-offset_right = 928.0
-offset_bottom = 480.0
-
-[node name="Correct_Answer" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="OptionA" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="OptionB" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="OptionC" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="OptionD" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="NextQuestionButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Next Question"
-
-[node name="AnswerLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+offset_right = 940.0
+offset_bottom = 788.0
+texture = ExtResource("2_s73n4")
 
 [node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 2
-offset_left = 137.0
-offset_top = 174.0
-offset_right = 937.0
-offset_bottom = 238.0
+offset_left = 112.0
+offset_top = 240.0
+offset_right = 912.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "Random"
 
-[connection signal="pressed" from="VBoxContainer/OptionA" to="." method="_on_option_a_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionC" to="." method="_on_option_c_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionD" to="." method="_on_option_d_pressed"]
-[connection signal="pressed" from="VBoxContainer/NextQuestionButton" to="." method="_on_next_question_button_pressed"]
+[node name="OptionA" type="Button" parent="."]
+layout_mode = 2
+offset_left = 171.0
+offset_top = 400.0
+offset_right = 448.0
+offset_bottom = 440.0
+
+[node name="OptionB" type="Button" parent="."]
+layout_mode = 2
+offset_left = 552.0
+offset_top = 399.0
+offset_right = 832.0
+offset_bottom = 444.0
+
+[node name="OptionC" type="Button" parent="."]
+layout_mode = 2
+offset_left = 168.0
+offset_top = 512.0
+offset_right = 448.0
+offset_bottom = 552.0
+
+[node name="OptionD" type="Button" parent="."]
+layout_mode = 2
+offset_left = 552.0
+offset_top = 512.0
+offset_right = 832.0
+offset_bottom = 552.0
+
+[node name="Correct_Answer" type="Label" parent="."]
+layout_mode = 2
+offset_left = 96.0
+offset_top = 288.0
+offset_right = 888.0
+offset_bottom = 375.0
+size_flags_vertical = 1
+
+[node name="NextQuestionButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 368.0
+offset_top = 632.0
+offset_right = 552.0
+offset_bottom = 688.0
+text = "Next Question"
+
+[node name="AnswerLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 272.0
+offset_top = 328.0
+offset_right = 1064.0
+offset_bottom = 351.0
+
+[connection signal="pressed" from="OptionA" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="OptionB" to="." method="_on_option_b_pressed"]
+[connection signal="pressed" from="OptionC" to="." method="_on_option_c_pressed"]
+[connection signal="pressed" from="OptionD" to="." method="_on_option_d_pressed"]
+[connection signal="pressed" from="NextQuestionButton" to="." method="_on_next_question_button_pressed"]
