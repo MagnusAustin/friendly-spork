@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvbklh2n0cd51"]
+
+[ext_resource type="Texture2D" uid="uid://7lpxeh0sd7x3" path="res://Gemini_Generated_Image_iwtoz5iwtoz5iwto.jpeg" id="1_23psn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GeminiGeneratedImageIwtoz5Iwtoz5Iwto" type="Sprite2D" parent="."]
+position = Vector2(1048, 492)
+scale = Vector2(0.609375, 0.371094)
+texture = ExtResource("1_23psn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1067, 503)

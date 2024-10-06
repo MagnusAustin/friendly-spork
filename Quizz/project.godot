@@ -11,6 +11,14 @@ config_version=5
 [application]
 
 config/name="Quizz"
-run/main_scene="res://control.tscn"
+run/main_scene="res://authentication.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")

@@ -41,6 +41,7 @@ func next_question():
 	else:
 		current_question_index +=1
 		$VBoxContainer/AnswerLabel.text = ''
+		$VBoxContainer/Correct_Answer.text = ''
 		$QuestionLabel.text = questions[current_question_index]
 		$VBoxContainer/OptionA.text = options[current_question_index][0]
 		$VBoxContainer/OptionB.text = options[current_question_index][1]
@@ -55,7 +56,8 @@ func _on_next_question_button_pressed():
 
 func out_of_bounds():
 	$VBoxContainer/AnswerLabel.queue_free()
-	$QuestionLabel.text = "Hooray"
+	$QuestionLabel.text = "You've Completed the Quiz"
+	$VBoxContainer/Correct_Answer.queue_free()
 	$VBoxContainer/OptionA.queue_free()
 	$VBoxContainer/OptionB.queue_free()
 	$VBoxContainer/OptionC.queue_free()
@@ -97,4 +99,5 @@ func _on_option_d_pressed():
 		correct_ans() 
 		
 func correct_ans():
+	$VBoxContainer/Correct_Answer.text = options[current_question_index][correct[current_question_index]]
 	print(options[current_question_index][correct[current_question_index]])

@@ -18,6 +18,9 @@ offset_top = 248.0
 offset_right = 928.0
 offset_bottom = 480.0
 
+[node name="Correct_Answer" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
 [node name="OptionA" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 
