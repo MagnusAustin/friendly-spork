@@ -33,5 +33,5 @@ text = "Office
 
 [connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
 [connection signal="pressed" from="VBoxContainer/Home" to="." method="_on_home_pressed"]
-[connection signal="pressed" from="VBoxContainer/Office" to="." method="_on_office_pressed"]
 [connection signal="pressed" from="VBoxContainer/Office" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Office" to="." method="_on_office_pressed"]

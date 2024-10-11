@@ -5,6 +5,7 @@ var options = []
 var correct = []
 var current_question_index = 0
 var score = 0
+var nexText = load("res://assets/NewRect.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,17 +52,17 @@ func _on_next_question_button_pressed():
 		next_question()
 
 func out_of_bounds():
-	$TextureRect.queue_free()
+	$TextureRect.texture = nexText
 	$AnswerLabel.queue_free()
-	$QuestionLabel.text = "You've Completed the Quiz"
+	$QuestionLabel.text = "You've Completed the Quiz. Your Score: " + str(score) + "/" + str(questions.size())
 	$Correct_Answer.queue_free()
 	$OptionA.queue_free()
 	$OptionB.queue_free()
 	$OptionC.queue_free()
 	$OptionD.queue_free()
 	$NextQuestionButton.queue_free()
-	$".".add_child(Label.new())
-	$".".get_child($".".get_child_count() - 1).text = "Your Score: " + str(score) + "/" + str(questions.size())
+	#$QuestionLabel.add_child(Label.new())
+	#$QuestionLabel.get_child($QuestionLabel.get_child_count() - 1).text = "Your Score: " + str(score) + "/" + str(questions.size())
 
 func _on_option_a_pressed():
 	if correct[current_question_index] == 0: 

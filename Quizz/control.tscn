@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://control.gd" id="1_wyk7d"]
 [ext_resource type="Texture2D" uid="uid://bp7ae5rnpg62l" path="res://Cyan Simple Quiz Time Facebook Post.png" id="2_s73n4"]
 
-[node name="Control" type="Control"]
+[node name="Quiz" type="Control"]
 layout_mode = 3
 anchor_right = 0.999
 anchor_bottom = 0.996
